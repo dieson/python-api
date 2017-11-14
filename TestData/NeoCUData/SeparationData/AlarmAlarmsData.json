@@ -1,0 +1,29 @@
+{
+  "get_alarm_alarms_01": {
+    "TestCase": "ALARM_ALARMS",
+    "input": {
+      "pagesize": 5
+    },
+    "output": {
+      "ok": true,
+      "data": {
+        "totalPages": null,
+        "pageSize": "int",
+        "rows": [
+          {
+            "meter_name": "",
+            "alarm_name": "",
+            "target": "",
+            "obj_id": "",
+            "time": "",
+            "tenant_name": "",
+            "level": "",
+            "id": "",
+            "rule": "",
+            "target_type": ""
+          }
+        ]
+      }
+    }
+  }
+}
