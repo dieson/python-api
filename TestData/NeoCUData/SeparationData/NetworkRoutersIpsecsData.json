@@ -1,0 +1,186 @@
+{
+  "get_network_routers_ipsecs_id_01": {
+    "TestCase": "GET NETWORK ROUTERS IPSECS ID", 
+    "router_id": "045c5f01-4b90-4218-81fe-92d4bf6858ad", 
+    "ipsecs_id": "faeaa51f-7306-44bc-b42b-324c8989f1da", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {
+        "ipsec_site_connection": {
+          "psk": "1234", 
+          "peer_cidrs": [], 
+          "description": "", 
+          "name": "create_ipsecs", 
+          "admin_state_up": true, 
+          "ikepolicy_info": {
+            "phase1_negotiation_mode": "main", 
+            "tenant_id": "033c54f1743f4b00aaa4b9f66003acc3", 
+            "auth_algorithm": "sha1", 
+            "name": "create_ipsecs", 
+            "encryption_algorithm": "aes-128", 
+            "pfs": "group5", 
+            "lifetime": {
+              "units": "seconds", 
+              "value": 3600
+            }, 
+            "ike_version": "v1", 
+            "description": ""
+          }, 
+          "initiator": "bi-directional", 
+          "mtu": 1500, 
+          "ipsecpolicy_info": {
+            "name": "create_ipsecs", 
+            "transform_protocol": "esp", 
+            "auth_algorithm": "sha1", 
+            "encapsulation_mode": "tunnel", 
+            "encryption_algorithm": "aes-128", 
+            "pfs": "group5", 
+            "lifetime": {
+              "units": "seconds", 
+              "value": 3600
+            }, 
+            "description": ""
+          }, 
+          "dpd": {
+            "action": "hold", 
+            "interval": 30, 
+            "timeout": 120
+          }, 
+          "peer_ep_group": [
+            "192.168.200.0/24"
+          ], 
+          "peer_address": "201.201.202.2", 
+          "auth_mode": "psk", 
+          "peer_id": "201.201.202.2", 
+          "route_mode": "static"
+        }
+      }
+    }
+  }, 
+  "put_network_routers_ipsecs_id_01": {
+    "TestCase": "PUT NETWORK ROUTERS IPSECS ID", 
+    "router_id": "045c5f01-4b90-4218-81fe-92d4bf6858ad", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {
+        "ipsec_site_connection": {
+          "psk": "4321", 
+          "initiator": "bi-directional", 
+          "name": "update_ipsecs", 
+          "admin_state_up": true, 
+          "tenant_id": "033c54f1743f4b00aaa4b9f66003acc3", 
+          "auth_mode": "psk", 
+          "peer_cidrs": [], 
+          "mtu": 1500, 
+          "dpd": {
+            "action": "hold", 
+            "interval": 30, 
+            "timeout": 120
+          }, 
+          "route_mode": "static", 
+          "peer_address": "192.168.2.255", 
+          "peer_id": "192.168.2.255", 
+          "id": "faeaa51f-7306-44bc-b42b-324c8989f1da", 
+          "description": ""
+        }
+      }
+    }, 
+    "ipsecs_id": "faeaa51f-7306-44bc-b42b-324c8989f1da", 
+    "input": {
+      "ipsec_site_connection": {
+        "peer_address": "192.168.2.255", 
+        "peer_id": "192.168.2.255", 
+        "name": "update_ipsecs", 
+        "psk": "4321"
+      }, 
+      "peer_endpoint_group": {
+        "endpoints": [
+          "192.1.1.12/32"
+        ], 
+        "name": "test"
+      }
+    }
+  }, 
+  "post_network_routers_ipsecs_01": {
+    "TestCase": "POST NETWORK ROUTERS IPSECS", 
+    "router_id": "045c5f01-4b90-4218-81fe-92d4bf6858ad", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {
+        "ipsec_site_connection": {
+          "psk": "1234", 
+          "initiator": "bi-directional", 
+          "name": "create_ipsecs", 
+          "admin_state_up": true, 
+          "tenant_id": "033c54f1743f4b00aaa4b9f66003acc3", 
+          "auth_mode": "psk", 
+          "peer_cidrs": [], 
+          "mtu": 1500, 
+          "dpd": {
+            "action": "hold", 
+            "interval": 30, 
+            "timeout": 120
+          }, 
+          "route_mode": "static", 
+          "peer_address": "201.201.202.2", 
+          "peer_id": "201.201.202.2", 
+          "description": ""
+        }
+      }
+    }, 
+    "input": {
+      "local_endpoint_group": {
+        "endpoints": [
+          "76f2670a-a461-49f7-8514-18e4d67d9fed"
+        ], 
+        "type": "subnet", 
+        "name": "test"
+      }, 
+      "ipsec_site_connection": {
+        "psk": "1234", 
+        "description": "", 
+        "admin_state_up": true, 
+        "mtu": 1500, 
+        "dpd": {
+          "action": "hold", 
+          "interval": 30, 
+          "timeout": 120
+        }, 
+        "peer_address": "201.201.202.2", 
+        "peer_id": "201.201.202.2", 
+        "name": "create_ipsecs"
+      }, 
+      "peer_endpoint_group": {
+        "endpoints": [
+          "192.168.200.0/24"
+        ], 
+        "type": "cidr", 
+        "name": "test"
+      }
+    }
+  }, 
+  "delete_network_routers_ipsecs_id_01": {
+    "TestCase": "DELETE NETWORK ROUTERS IPSECS ID", 
+    "router_id": "045c5f01-4b90-4218-81fe-92d4bf6858ad", 
+    "ipsecs_id": "faeaa51f-7306-44bc-b42b-324c8989f1da", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {}
+    }
+  }, 
+  "get_network_routers_ipsecs_01": {
+    "TestCase": "GET NETWORK ROUTERS IPSECS", 
+    "router_id": "045c5f01-4b90-4218-81fe-92d4bf6858ad", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {
+        "ipsec_site_connections": []
+      }
+    }
+  }
+}

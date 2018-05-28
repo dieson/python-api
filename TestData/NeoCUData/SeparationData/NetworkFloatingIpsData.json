@@ -1,0 +1,157 @@
+{
+  "get_network_floating_ips_id_inspect_01": {
+    "TestCase": "GET NETWORK FLOATING IPS ID INSPECT", 
+    "floating_id": "1e6ee7bd-9d91-4617-8bdd-3c05f1ee6c63", 
+    "input": {
+      "method": "delete"
+    }, 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {}
+    }
+  }, 
+  "get_network_floating_ips_01": {
+    "TestCase": "GET NETWORK FLOATING IPS", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {
+        "floatingips": [
+          {
+            "router_id": "", 
+            "status": "", 
+            "qos": [], 
+            "description": "", 
+            "tenant_id": "", 
+            "dns_domain": "", 
+            "bind_qos_info": [], 
+            "floating_network_id": "", 
+            "fixed_ip_address": "", 
+            "dns_name": "", 
+            "port_id": "", 
+            "id": ""
+          }
+        ]
+      }
+    }
+  }, 
+  "get_network_floating_ips_id_devices_01": {
+    "TestCase": "GET NETWORK FLOATING IPS DEVICES", 
+    "floating_id": "1e6ee7bd-9d91-4617-8bdd-3c05f1ee6c63", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {
+        "floatingip_devices": []
+      }
+    }
+  }, 
+  "get_network_floating_ips_floatingID_01": {
+    "TestCase": "GET NETWORK FLOATING IPS BY ID", 
+    "floating_id": "1e6ee7bd-9d91-4617-8bdd-3c05f1ee6c63", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {
+        "floatingip": {
+          "router_id": null, 
+          "status": "DOWN", 
+          "qos": [], 
+          "description": "floating ip for testing", 
+          "tenant_id": "033c54f1743f4b00aaa4b9f66003acc3", 
+          "dns_domain": "", 
+          "bind_qos_info": [], 
+          "floating_network_id": "5f9d23c9-de55-4fdf-957d-8d573466f42d", 
+          "fixed_ip_address": null, 
+          "dns_name": "", 
+          "port_id": null, 
+          "id": "1e6ee7bd-9d91-4617-8bdd-3c05f1ee6c63"
+        }
+      }
+    }
+  }, 
+  "put_network_floating_ips_floatingID_01": {
+    "TestCase": "PUT NETWORK FLOATING IPS FLOATINGID", 
+    "floating_id": "1e6ee7bd-9d91-4617-8bdd-3c05f1ee6c63", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {
+        "floatingip": {
+          "router_id": null, 
+          "status": "DOWN", 
+          "qos": [
+            "834e84a3-132d-4a17-a485-747082621e30", 
+            "ed2b8c70-78f2-4d21-bffd-5e80feb5915d"
+          ], 
+          "description": "floating ip for testing", 
+          "tenant_id": "033c54f1743f4b00aaa4b9f66003acc3", 
+          "dns_domain": "", 
+          "floating_network_id": "5f9d23c9-de55-4fdf-957d-8d573466f42d", 
+          "fixed_ip_address": null, 
+          "dns_name": "", 
+          "port_id": null, 
+          "id": "1e6ee7bd-9d91-4617-8bdd-3c05f1ee6c63"
+        }
+      }
+    }, 
+    "input": {
+      "floatingip": {
+        "qos": [
+          "834e84a3-132d-4a17-a485-747082621e30", 
+          "ed2b8c70-78f2-4d21-bffd-5e80feb5915d"
+        ]
+      }
+    }
+  }, 
+  "post_network_floating_ips_01": {
+    "TestCase": "POST NETWORK FLOATING IPS", 
+    "input": {
+      "floatingip": {
+        "floating_network_id": "5f9d23c9-de55-4fdf-957d-8d573466f42d", 
+        "tenant_id": "033c54f1743f4b00aaa4b9f66003acc3", 
+        "subnet_id": "4369b050-38ea-44d5-8047-3a9fdd33c845", 
+        "description": "floating ip for testing"
+      }
+    }, 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {
+        "floatingip": {
+          "router_id": null, 
+          "status": "DOWN", 
+          "qos": [], 
+          "description": "floating ip for testing", 
+          "tenant_id": "033c54f1743f4b00aaa4b9f66003acc3", 
+          "dns_domain": "", 
+          "floating_network_id": "5f9d23c9-de55-4fdf-957d-8d573466f42d", 
+          "fixed_ip_address": null, 
+          "dns_name": "", 
+          "port_id": null
+        }
+      }
+    }
+  }, 
+  "delete_network_floating_ips_networkID_01": {
+    "TestCase": "DELETE NETWORK FLOATING IPS", 
+    "floating_id": "1e6ee7bd-9d91-4617-8bdd-3c05f1ee6c63", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {}
+    }
+  }, 
+  "get_network_floating_ips_inspect_01": {
+    "TestCase": "GET NETWORK FLOATING IPS INSPECT", 
+    "input": {
+      "method": "post"
+    }, 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {}
+    }
+  }
+}

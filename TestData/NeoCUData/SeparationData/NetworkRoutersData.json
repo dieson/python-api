@@ -1,0 +1,185 @@
+{
+  "get_network_routers_01": {
+    "TestCase": "GET NETWORK ROUTERS", 
+    "output": {
+      "msg": "", 
+      "code": "int", 
+      "data": {
+        "routers": [
+          {
+            "status": "ACTIVE", 
+            "availability_zone_hints": [], 
+            "ha_network_id": null, 
+            "portforwardings": [], 
+            "name": "", 
+            "gw_port_id": "", 
+            "admin_state_up": "boolean", 
+            "tenant_id": "", 
+            "created_at": "", 
+            "distributed": "boolean", 
+            "updated_at": "", 
+            "id": "", 
+            "availability_zones": [], 
+            "routes": [], 
+            "ha": "boolean", 
+            "networks": [], 
+            "vlan_id": "", 
+            "description": ""
+          }
+        ]
+      }
+    }
+  }, 
+  "delete_network_routers_id_01": {
+    "TestCase": "DELETE NETWORK ROUTERS ID", 
+    "router_id": "2b21b375-ad02-4ea0-8a75-2f70d665e856", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {}
+    }
+  }, 
+  "put_network_routers_id_01": {
+    "TestCase": "PUT NETWORK ROUTERS ID", 
+    "router_id": "2b21b375-ad02-4ea0-8a75-2f70d665e856", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {
+        "router": {
+          "status": "ACTIVE", 
+          "external_gateway_info": {
+            "network_id": "7620e21b-cdcc-4902-9cde-b84d0a44c17a", 
+            "enable_snat": true, 
+            "external_fixed_ips": [
+              {
+                "subnet_id": "c793da65-4f26-4ada-8027-959e1f9b721f"
+              }
+            ]
+          }, 
+          "availability_zone_hints": [], 
+          "ha_network_id": null, 
+          "portforwardings": [], 
+          "name": "update_for_routers", 
+          "admin_state_up": true, 
+          "tenant_id": "0a947a1b5b4e4e8a8cd09e420dfb0f82", 
+          "distributed": false, 
+          "availability_zones": [
+            "nova"
+          ], 
+          "routes": [], 
+          "ha": true, 
+          "description": ""
+        }
+      }
+    }, 
+    "input": {
+      "router": {
+        "name": "update_for_routers", 
+        "admin_state_up": true
+      }
+    }
+  }, 
+  "post_network_routers_01": {
+    "TestCase": "POST NETWORK ROUTERS", 
+    "input": {
+      "router": {
+        "external_gateway_info": {
+          "network_id": "7620e21b-cdcc-4902-9cde-b84d0a44c17a", 
+          "external_fixed_ips": [
+            {
+              "subnet_id": "c793da65-4f26-4ada-8027-959e1f9b721f"
+            }
+          ]
+        }, 
+        "tenant_id": "0a947a1b5b4e4e8a8cd09e420dfb0f82", 
+        "name": "test_for_routers", 
+        "admin_state_up": false
+      }
+    }, 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {
+        "router": {
+          "status": "ACTIVE", 
+          "external_gateway_info": {
+            "network_id": "7620e21b-cdcc-4902-9cde-b84d0a44c17a", 
+            "enable_snat": true, 
+            "external_fixed_ips": [
+              {
+                "subnet_id": "c793da65-4f26-4ada-8027-959e1f9b721f"
+              }
+            ]
+          }, 
+          "availability_zone_hints": [], 
+          "ha_network_id": null, 
+          "portforwardings": [], 
+          "name": "test_for_routers", 
+          "admin_state_up": false, 
+          "tenant_id": "0a947a1b5b4e4e8a8cd09e420dfb0f82", 
+          "distributed": false, 
+          "availability_zones": [], 
+          "routes": [], 
+          "ha": true, 
+          "description": ""
+        }
+      }
+    }
+  }, 
+  "get_network_routers_id_01": {
+    "TestCase": "GET NETWORK ROUTERS ID", 
+    "router_id": "2b21b375-ad02-4ea0-8a75-2f70d665e856", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {
+        "router": {
+          "status": "ACTIVE", 
+          "external_gateway_info": {
+            "enable_snat": true, 
+            "qoses": [], 
+            "network_id": "7620e21b-cdcc-4902-9cde-b84d0a44c17a", 
+            "network_name": "external for testing", 
+            "security_groups": [
+              {
+                "name": "default"
+              }
+            ], 
+            "external_fixed_ips": [
+              {
+                "subnet_id": "c793da65-4f26-4ada-8027-959e1f9b721f", 
+                "subnet_name": "subnet for testing"
+              }
+            ]
+          }, 
+          "availability_zone_hints": [], 
+          "ha_network_id": null, 
+          "portforwardings": [], 
+          "name": "test_for_routers", 
+          "admin_state_up": false, 
+          "tenant_id": "0a947a1b5b4e4e8a8cd09e420dfb0f82", 
+          "distributed": false, 
+          "enable_high_perf_router": false, 
+          "availability_zones": [
+            "nova"
+          ], 
+          "routes": [], 
+          "ha": true, 
+          "description": ""
+        }
+      }
+    }
+  }, 
+  "get_network_routers_inspect_01": {
+    "TestCase": "GET NETWORK ROUTERS INSPECT", 
+    "input": {
+      "method": "post"
+    }, 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {}
+    }
+  }
+}

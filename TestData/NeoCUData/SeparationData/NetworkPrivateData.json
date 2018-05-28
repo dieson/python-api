@@ -1,0 +1,351 @@
+{
+  "get_private_network_type_01": {
+    "TestCase": "GET PRIVATE NETWORK TYPE", 
+    "output": {
+      "msg": "", 
+      "code": "int", 
+      "data": {
+        "network_type": ""
+      }
+    }
+  }, 
+  "get_private_physical_networks_01": {
+    "TestCase": "GET PRIVATE PHYSICAL NETWORKS", 
+    "output": {
+      "msg": "", 
+      "code": "int", 
+      "data": {
+        "physical_networks": []
+      }
+    }
+  }, 
+  "get_private_physical_networks_02": {
+    "TestCase": "GET PRIVATE PHYSICAL NETWORKS", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {
+        "physical_networks": []
+      }
+    }
+  }, 
+  "get_network_private_01": {
+    "TestCase": "GET NETWORK PRIVATE", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {
+        "networks": [
+          {
+            "status": "", 
+            "router:external": "boolean", 
+            "availability_zone_hints": [], 
+            "availability_zones": [], 
+            "description": "", 
+            "provider:physical_network": "", 
+            "subnets": [], 
+            "shared": "boolean", 
+            "tenant_id": "", 
+            "tags": [], 
+            "ipv6_address_scope": null, 
+            "provider:network_type": "", 
+            "admin_state_up": "boolean", 
+            "ipv4_address_scope": null, 
+            "port_security_enabled": "boolean", 
+            "name": "", 
+            "id": "", 
+            "provider:segmentation_id": "int"
+          }
+        ]
+      }
+    }
+  }, 
+  "get_network_private_02": {
+    "TestCase": "GET NETWORK PRIVATE", 
+    "output": {
+      "msg": "", 
+      "code": "int", 
+      "data": {
+        "networks": [
+          {
+            "status": "", 
+            "router:external": false, 
+            "availability_zone_hints": [], 
+            "availability_zones": [], 
+            "description": "", 
+            "provider:physical_network": "", 
+            "subnets": [], 
+            "shared": "boolean", 
+            "tenant_id": "", 
+            "tags": [], 
+            "ipv6_address_scope": null, 
+            "provider:network_type": "", 
+            "admin_state_up": true, 
+            "ipv4_address_scope": null, 
+            "port_security_enabled": true, 
+            "mtu": "int", 
+            "name": "", 
+            "id": "", 
+            "provider:segmentation_id": "int"
+          }
+        ]
+      }
+    }
+  }, 
+  "get_private_inspect_01": {
+    "TestCase": "GET PRIVATE NETWORK INSPECT", 
+    "network_id": "7d46ccf9-0101-4aea-935d-b3be352117e7", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {}
+    }, 
+    "input": {
+      "method": "delete"
+    }
+  }, 
+  "post_network_private_02": {
+    "TestCase": "POST NETWORK PRIVATE", 
+    "input": {
+      "network": {
+        "shared": false, 
+        "tenant_id": "57212f30fbbd4d56ad4c22006c369b30", 
+        "network_type": "vxlan", 
+        "name": "test"
+      }
+    }, 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {
+        "network": {
+          "status": "ACTIVE", 
+          "router:external": false, 
+          "availability_zone_hints": [], 
+          "availability_zones": [], 
+          "ipv4_address_scope": null, 
+          "description": "", 
+          "subnets": [], 
+          "port_security_enabled": true, 
+          "tenant_id": "57212f30fbbd4d56ad4c22006c369b30", 
+          "tags": [], 
+          "ipv6_address_scope": null, 
+          "provider:network_type": "vxlan", 
+          "admin_state_up": true, 
+          "shared": false, 
+          "name": "test"
+        }
+      }
+    }
+  }, 
+  "get_private_network_type_02": {
+    "TestCase": "GET PRIVATE NETWORK TYPE", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {
+        "network_type": "vxlan"
+      }
+    }
+  }, 
+  "delete_network_private_networkID_02": {
+    "TestCase": "DELETE NETWORK PRIVATE", 
+    "network_id": "8d2ccb97-c229-4724-a879-1b7b216b47d2", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {}
+    }
+  }, 
+  "delete_network_private_networkID_01": {
+    "TestCase": "DELETE NETWORK PRIVATE", 
+    "network_id": "7d46ccf9-0101-4aea-935d-b3be352117e7", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {}
+    }
+  }, 
+  "get_network_private_networkID_02": {
+    "TestCase": "GET NETWORK PRIVATE BY ID", 
+    "network_id": "8d2ccb97-c229-4724-a879-1b7b216b47d2", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {
+        "network": {
+          "status": "ACTIVE", 
+          "router:external": false, 
+          "availability_zone_hints": [], 
+          "availability_zones": [], 
+          "description": "", 
+          "provider:physical_network": null, 
+          "subnets": [], 
+          "shared": false, 
+          "tenant_id": "57212f30fbbd4d56ad4c22006c369b30", 
+          "tags": [], 
+          "ipv6_address_scope": null, 
+          "admin_state_up": true, 
+          "ipv4_address_scope": null, 
+          "port_security_enabled": true, 
+          "id": "8d2ccb97-c229-4724-a879-1b7b216b47d2", 
+          "name": "test"
+        }
+      }
+    }
+  }, 
+  "get_private_inspect_02": {
+    "TestCase": "GET PRIVATE NETWORK INSPECT", 
+    "network_id": "8d2ccb97-c229-4724-a879-1b7b216b47d2", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {}
+    }, 
+    "input": {
+      "method": "delete"
+    }
+  }, 
+  "post_network_private_01": {
+    "TestCase": "POST NETWORK PRIVATE", 
+    "input": {
+      "network": {
+        "shared": true, 
+        "physical_network": "self", 
+        "name": "create_network_private", 
+        "provider:physical_network": [
+          "self"
+        ], 
+        "tenant_id": "6428922c84ea48a69f5e92bcc9c68fc4"
+      }
+    }, 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {
+        "network": {
+          "status": "ACTIVE", 
+          "router:external": false, 
+          "availability_zone_hints": [], 
+          "availability_zones": [], 
+          "description": "", 
+          "provider:physical_network": [
+            "self"
+          ], 
+          "subnets": [], 
+          "shared": true, 
+          "tenant_id": "6428922c84ea48a69f5e92bcc9c68fc4", 
+          "tags": [], 
+          "ipv6_address_scope": null, 
+          "provider:network_type": "vlan", 
+          "admin_state_up": true, 
+          "ipv4_address_scope": null, 
+          "port_security_enabled": true, 
+          "name": "create_network_private"
+        }
+      }
+    }
+  }, 
+  "get_network_private_networkID_01": {
+    "TestCase": "GET NETWORK PRIVATE BY ID", 
+    "network_id": "7d46ccf9-0101-4aea-935d-b3be352117e7", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {
+        "network": {
+          "status": "ACTIVE", 
+          "router:external": false, 
+          "availability_zone_hints": [], 
+          "availability_zones": [], 
+          "description": "", 
+          "provider:physical_network": [
+            "self"
+          ], 
+          "subnets": [], 
+          "shared": true, 
+          "tenant_id": "6428922c84ea48a69f5e92bcc9c68fc4", 
+          "tags": [], 
+          "ipv6_address_scope": null, 
+          "provider:network_type": "vlan", 
+          "admin_state_up": true, 
+          "ipv4_address_scope": null, 
+          "port_security_enabled": true, 
+          "id": "7d46ccf9-0101-4aea-935d-b3be352117e7", 
+          "name": "create_network_private"
+        }
+      }
+    }
+  }, 
+  "put_network_private_networkID_01": {
+    "TestCase": "PUT NETWORK PRIVATE", 
+    "network_id": "7d46ccf9-0101-4aea-935d-b3be352117e7", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {
+        "network": {
+          "status": "ACTIVE", 
+          "router:external": false, 
+          "availability_zone_hints": [], 
+          "availability_zones": [], 
+          "description": "", 
+          "provider:physical_network": [
+            "self"
+          ], 
+          "subnets": [], 
+          "shared": true, 
+          "tenant_id": "6428922c84ea48a69f5e92bcc9c68fc4", 
+          "tags": [], 
+          "ipv6_address_scope": null, 
+          "provider:network_type": "vlan", 
+          "admin_state_up": true, 
+          "ipv4_address_scope": null, 
+          "port_security_enabled": true, 
+          "id": "7d46ccf9-0101-4aea-935d-b3be352117e7", 
+          "name": "testPUT"
+        }
+      }
+    }, 
+    "input": {
+      "network": {
+        "shared": true, 
+        "name": "testPUT"
+      }
+    }
+  }, 
+  "put_network_private_networkID_02": {
+    "TestCase": "PUT NETWORK PRIVATE", 
+    "network_id": "8d2ccb97-c229-4724-a879-1b7b216b47d2", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {
+        "network": {
+          "status": "ACTIVE", 
+          "router:external": false, 
+          "availability_zone_hints": [], 
+          "availability_zones": [], 
+          "description": "", 
+          "provider:physical_network": null, 
+          "subnets": [], 
+          "shared": true, 
+          "tenant_id": "57212f30fbbd4d56ad4c22006c369b30", 
+          "tags": [], 
+          "ipv6_address_scope": null, 
+          "admin_state_up": true, 
+          "ipv4_address_scope": null, 
+          "port_security_enabled": true, 
+          "id": "8d2ccb97-c229-4724-a879-1b7b216b47d2", 
+          "name": "testPUT"
+        }
+      }
+    }, 
+    "input": {
+      "network": {
+        "shared": true, 
+        "name": "testPUT"
+      }
+    }
+  }
+}

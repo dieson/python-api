@@ -1,0 +1,213 @@
+{
+  "put_network_subnets_id_01": {
+    "TestCase": "PUT NETWORK SUBNET ID", 
+    "subnet_id": "bad4fed3-d9d1-4796-860b-9edc1b4aad97", 
+    "input": {
+      "subnet": {
+        "host_routes": "192.168.200.0/24,10.56.1.254", 
+        "allocation_pools": "192.168.199.2,192.168.199.20", 
+        "dns_nameservers": "8.8.8.8", 
+        "name": "update_the_subnet", 
+        "enable_dhcp": true
+      }
+    }, 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {
+        "subnet": {
+          "description": "", 
+          "enable_dhcp": true, 
+          "network_id": "5044f13e-0db4-4276-856e-3aa4d2e053f9", 
+          "tenant_id": "033c54f1743f4b00aaa4b9f66003acc3", 
+          "dns_nameservers": [
+            "8.8.8.8"
+          ], 
+          "gateway_ip": "192.168.199.1", 
+          "ipv6_ra_mode": null, 
+          "allocation_pools": [
+            {
+              "start": "192.168.199.2", 
+              "end": "192.168.199.20"
+            }
+          ], 
+          "host_routes": [
+            {
+              "nexthop": "10.56.1.254", 
+              "destination": "192.168.200.0/24"
+            }
+          ], 
+          "ip_version": 4, 
+          "ipv6_address_mode": null, 
+          "cidr": "192.168.199.0/24", 
+          "subnetpool_id": null, 
+          "name": "update_the_subnet"
+        }
+      }
+    }
+  }, 
+  "post_network_subnets_01": {
+    "TestCase": "POST NETWORK SUBNETS", 
+    "input": {
+      "subnet": {
+        "name": "test_for_subnet", 
+        "enable_dhcp": true, 
+        "network_id": "5044f13e-0db4-4276-856e-3aa4d2e053f9", 
+        "tenant_id": "033c54f1743f4b00aaa4b9f66003acc3", 
+        "dns_nameservers": "114.114.114.114", 
+        "allocation_pools": "192.168.199.2,192.168.199.4", 
+        "gateway_ip": "192.168.199.1", 
+        "host_routes": "10.6.6.0/24,10.5.5.1", 
+        "cidr": "192.168.199.0/24"
+      }
+    }, 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {
+        "subnet": {
+          "host_routes": [
+            {
+              "nexthop": "10.5.5.1", 
+              "destination": "10.6.6.0/24"
+            }
+          ], 
+          "description": "", 
+          "enable_dhcp": true, 
+          "network_id": "5044f13e-0db4-4276-856e-3aa4d2e053f9", 
+          "tenant_id": "033c54f1743f4b00aaa4b9f66003acc3", 
+          "dns_nameservers": [
+            "114.114.114.114"
+          ], 
+          "ipv6_ra_mode": null, 
+          "allocation_pools": [
+            {
+              "start": "192.168.199.2", 
+              "end": "192.168.199.254"
+            }
+          ], 
+          "gateway_ip": "192.168.199.1", 
+          "ip_version": 4, 
+          "ipv6_address_mode": null, 
+          "cidr": "192.168.199.0/24", 
+          "subnetpool_id": null, 
+          "name": "test_for_subnet"
+        }
+      }
+    }
+  }, 
+  "get_network_subnet_is_bind_router_01": {
+    "TestCase": "GET NETWORK SUBNET IS BIND ROUTER", 
+    "subnet_id": "bad4fed3-d9d1-4796-860b-9edc1b4aad97", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {
+        "is_bind": false
+      }
+    }
+  }, 
+  "get_network_subnet_01": {
+    "TestCase": "GET NETWORK SUBNET", 
+    "output": {
+      "msg": "", 
+      "code": "int", 
+      "data": {
+        "subnets": [
+          {
+            "host_routes": [], 
+            "description": "", 
+            "enable_dhcp": "boolean", 
+            "network_id": "", 
+            "tenant_id": "", 
+            "created_at": "", 
+            "dns_nameservers": [], 
+            "updated_at": "", 
+            "ipv6_ra_mode": null, 
+            "allocation_pools": [
+              {
+                "start": "", 
+                "end": ""
+              }
+            ], 
+            "gateway_ip": "", 
+            "ip_version": "int", 
+            "ipv6_address_mode": null, 
+            "cidr": "", 
+            "id": "", 
+            "subnetpool_id": null, 
+            "name": ""
+          }
+        ]
+      }
+    }
+  }, 
+  "get_network_subnet_id_inspect_01": {
+    "TestCase": "GET NETWORK SUBNET ID INSPECT", 
+    "subnet_id": "bad4fed3-d9d1-4796-860b-9edc1b4aad97", 
+    "input": {
+      "method": "delete"
+    }, 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {}
+    }
+  }, 
+  "delete_network_subnet_01": {
+    "TestCase": "DELETE NETWORK SUBNET", 
+    "subnet_id": "bad4fed3-d9d1-4796-860b-9edc1b4aad97", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {}
+    }
+  }, 
+  "get_network_subnet_inspect_01": {
+    "TestCase": "GET NETWORK SUBNET INSPECT", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {}
+    }, 
+    "input": {
+      "method": "post"
+    }
+  }, 
+  "get_network_subnets_id_01": {
+    "TestCase": "GET NETWORK SUBNETS ID", 
+    "subnet_id": "bad4fed3-d9d1-4796-860b-9edc1b4aad97", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {
+        "subnet": {
+          "host_routes": [
+            {
+              "destination": "10.6.6.0/24", 
+              "nexthop": "10.5.5.1"
+            }
+          ], 
+          "description": "", 
+          "enable_dhcp": true, 
+          "network_id": "5044f13e-0db4-4276-856e-3aa4d2e053f9", 
+          "tenant_id": "033c54f1743f4b00aaa4b9f66003acc3", 
+          "dns_nameservers": [], 
+          "ipv6_ra_mode": null, 
+          "allocation_pools": [
+            {
+              "start": "192.168.199.2", 
+              "end": "192.168.199.4"
+            }
+          ], 
+          "gateway_ip": "192.168.199.1", 
+          "ip_version": 4, 
+          "ipv6_address_mode": null, 
+          "cidr": "192.168.199.0/24", 
+          "subnetpool_id": null, 
+          "name": "test_for_subnet"
+        }
+      }
+    }
+  }
+}

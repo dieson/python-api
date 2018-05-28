@@ -1,0 +1,193 @@
+{
+  "get_network_routers_pptps_01": {
+    "TestCase": "GET NETWORK ROUTERS PPTPS", 
+    "router_id": null, 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {
+        "pptp_connections": []
+      }
+    }
+  }, 
+  "delete_network_routers_pptps_user_01": {
+    "TestCase": "DELETE NETWORK ROUTERS PPTPS USER", 
+    "router_id": null, 
+    "pptp_id": "None", 
+    "input": {
+      "user": {
+        "username": "add_user", 
+        "password": "Passw0rd", 
+        "ip_address": "172.168.10.1"
+      }
+    }, 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {
+        "pptp_connection": {
+          "name": "update_pptp", 
+          "limit_connections": 10, 
+          "admin_state_up": true, 
+          "tenant_id": "58f272ff9f2b41a0811ec40467a6a337", 
+          "description": "detail info", 
+          "ip_address": "172.168.10.0/24", 
+          "id": "None", 
+          "users": [
+            {
+              "username": "demo", 
+              "password": "Passw0rd", 
+              "ip_address": "*"
+            }
+          ]
+        }
+      }
+    }
+  }, 
+  "delete_network_routers_pptps_id_01": {
+    "TestCase": "DELETE NETWORK ROUTERS PPTPS ID", 
+    "router_id": null, 
+    "pptp_id": "None", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {}
+    }
+  }, 
+  "put_network_routers_pptps_id_01": {
+    "TestCase": "PUT NETWORK ROUTERS PPTPS ID", 
+    "router_id": null, 
+    "pptp_id": "None", 
+    "input": {
+      "pptp_connection": {
+        "admin_state_up": true, 
+        "ip_address": "172.168.10.0/24", 
+        "description": "detail info", 
+        "limit_connections": 10, 
+        "name": "update_pptp"
+      }
+    }, 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {
+        "pptp_connection": {
+          "name": "update_pptp", 
+          "limit_connections": 10, 
+          "admin_state_up": true, 
+          "tenant_id": "58f272ff9f2b41a0811ec40467a6a337", 
+          "description": "detail info", 
+          "ip_address": "172.168.10.0/24", 
+          "id": "None", 
+          "users": [
+            {
+              "username": "demo", 
+              "password": "Passw0rd", 
+              "ip_address": "*"
+            }
+          ]
+        }
+      }
+    }
+  }, 
+  "post_network_routers_pptps_users_01": {
+    "TestCase": "POST NETWORK ROUTERS PPTPS USERS", 
+    "router_id": null, 
+    "pptp_id": "None", 
+    "input": {
+      "user": {
+        "username": "add_user", 
+        "password": "Passw0rd", 
+        "ip_address": "172.168.10.1"
+      }
+    }, 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {
+        "pptp_connection": {
+          "name": "update_pptp", 
+          "limit_connections": 10, 
+          "admin_state_up": true, 
+          "tenant_id": "58f272ff9f2b41a0811ec40467a6a337", 
+          "description": "detail info", 
+          "ip_address": "172.168.10.0/24", 
+          "id": "None", 
+          "users": [
+            {
+              "username": "demo", 
+              "password": "Passw0rd", 
+              "ip_address": "*"
+            }, 
+            {
+              "username": "add_user", 
+              "password": "Passw0rd", 
+              "ip_address": "172.168.10.1"
+            }
+          ]
+        }
+      }
+    }
+  }, 
+  "get_network_routers_pptps_id_01": {
+    "TestCase": "POST NETWORK ROUTERS PPTPS", 
+    "router_id": null, 
+    "pptp_id": "None", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {
+        "pptp_connection": {
+          "name": "test_pptps", 
+          "limit_connections": 5, 
+          "admin_state_up": true, 
+          "tenant_id": "58f272ff9f2b41a0811ec40467a6a337", 
+          "description": "detail info", 
+          "ip_address": "172.168.12.0/24", 
+          "id": "None", 
+          "users": [
+            {
+              "username": "demo", 
+              "password": "Passw0rd", 
+              "ip_address": "*"
+            }
+          ]
+        }
+      }
+    }
+  }, 
+  "post_network_routers_pptps_01": {
+    "TestCase": "POST NETWORK ROUTERS PPTPS", 
+    "router_id": null, 
+    "input": {
+      "pptp_connection": {
+        "admin_state_up": true, 
+        "ip_address": "172.168.12.0/24", 
+        "description": "detail info", 
+        "limit_connections": 5, 
+        "name": "test_pptps"
+      }
+    }, 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {
+        "pptp_connection": {
+          "name": "test_pptps", 
+          "limit_connections": 5, 
+          "admin_state_up": true, 
+          "tenant_id": "58f272ff9f2b41a0811ec40467a6a337", 
+          "description": "detail info", 
+          "ip_address": "172.168.12.0/24", 
+          "users": [
+            {
+              "username": "demo", 
+              "password": "Passw0rd", 
+              "ip_address": "*"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

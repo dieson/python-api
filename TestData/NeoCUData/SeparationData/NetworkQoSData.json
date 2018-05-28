@@ -1,0 +1,168 @@
+{
+  "get_network_qos_inspect_01": {
+    "TestCase": "GET NETWORK QOS INSPECT", 
+    "input": {
+      "method": "post"
+    }, 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {}
+    }
+  }, 
+  "get_network_qos_id_devices_01": {
+    "TestCase": "GET NETWORK QOS ID DEVICES", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {
+        "ports": [], 
+        "floating_ips": []
+      }
+    }, 
+    "qos_id": "6da106a0-5fc2-4919-896d-c81ba73decee"
+  }, 
+  "delete_network_qos_id_01": {
+    "TestCase": "DELETE NETWORK QOS ID", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {}
+    }, 
+    "qos_id": "6da106a0-5fc2-4919-896d-c81ba73decee"
+  }, 
+  "put_network_qos_id_01": {
+    "TestCase": "PUT NETWORK QOS ID", 
+    "input": {
+      "qos": {
+        "shared": false, 
+        "type": "ratelimit", 
+        "name": "update_qos", 
+        "policies": {
+          "direction": "egress", 
+          "max_rate": "1048576"
+        }, 
+        "description": "test"
+      }
+    }, 
+    "qos_id": "6da106a0-5fc2-4919-896d-c81ba73decee", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {
+        "qos": {
+          "description": "test", 
+          "admin_state_up": true, 
+          "tenant_id": "b000a57fe69c49288eb59f82b7d8a4e3", 
+          "tags": [], 
+          "policies": {
+            "direction": "egress", 
+            "max_rate": 1048576
+          }, 
+          "shared": false, 
+          "type": "ratelimit", 
+          "id": "6da106a0-5fc2-4919-896d-c81ba73decee", 
+          "name": "update_qos"
+        }
+      }
+    }
+  }, 
+  "post_network_qos_01": {
+    "TestCase": "POST NETWORK QOS", 
+    "input": {
+      "qos": {
+        "description": "", 
+        "tenant_id": "b000a57fe69c49288eb59f82b7d8a4e3", 
+        "policies": {
+          "direction": "ingress", 
+          "max_rate": "10000000"
+        }, 
+        "shared": 1, 
+        "type": "ratelimit", 
+        "name": "test_for_qos"
+      }
+    }, 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {
+        "qos": {
+          "description": "", 
+          "admin_state_up": true, 
+          "tenant_id": "b000a57fe69c49288eb59f82b7d8a4e3", 
+          "tags": [], 
+          "policies": {
+            "direction": "ingress", 
+            "max_rate": 10000000
+          }, 
+          "shared": true, 
+          "type": "ratelimit", 
+          "name": "test_for_qos"
+        }
+      }
+    }
+  }, 
+  "get_network_qos_id_01": {
+    "TestCase": "GET NETWORK QOS ID", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {
+        "qos": {
+          "description": "test", 
+          "tags": [], 
+          "tenant_id": "b000a57fe69c49288eb59f82b7d8a4e3", 
+          "admin_state_up": true, 
+          "policies": {
+            "direction": "egress", 
+            "max_rate": "1048576"
+          }, 
+          "shared": false, 
+          "type": "ratelimit", 
+          "id": "6da106a0-5fc2-4919-896d-c81ba73decee", 
+          "name": "update_qos"
+        }
+      }
+    }, 
+    "qos_id": "6da106a0-5fc2-4919-896d-c81ba73decee"
+  }, 
+  "get_network_qos_id_inspect_01": {
+    "TestCase": "GET NETWORK QOS ID INSPECT", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {}
+    }, 
+    "qos_id": "6da106a0-5fc2-4919-896d-c81ba73decee", 
+    "input": {
+      "method": "delete"
+    }
+  }, 
+  "get_network_qos_01": {
+    "TestCase": "GET NETWORK QOS", 
+    "output": {
+      "msg": "", 
+      "code": "int", 
+      "data": {
+        "qoses": [
+          {
+            "description": "", 
+            "admin_state_up": "boolean", 
+            "tenant_id": "", 
+            "created_at": "", 
+            "tags": [], 
+            "updated_at": "", 
+            "policies": {
+              "direction": "", 
+              "max_rate": ""
+            }, 
+            "shared": "boolean", 
+            "type": "", 
+            "id": "", 
+            "name": ""
+          }
+        ]
+      }
+    }
+  }
+}

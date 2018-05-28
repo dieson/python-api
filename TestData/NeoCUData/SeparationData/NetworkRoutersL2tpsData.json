@@ -1,0 +1,191 @@
+{
+  "put_network_routers_l2tps_id_01": {
+    "TestCase": "PUT NETWORK ROUTERS L2TPS ID", 
+    "router_id": "bb76ee0f-e42b-401b-9217-07391ca97779", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {
+        "l2tp_connection": {
+          "psk": "abcdefgh", 
+          "users": [
+            {
+              "username": "demo", 
+              "password": "Passw0rd", 
+              "ip_address": "*"
+            }
+          ], 
+          "admin_state_up": true, 
+          "tenant_id": "033c54f1743f4b00aaa4b9f66003acc3", 
+          "description": "detail info", 
+          "net_cidr": "173.162.5.0/24", 
+          "id": "19745050-0dce-4bf0-9435-63152139bff7", 
+          "name": "update_l2tp"
+        }
+      }
+    }, 
+    "l2tp_id": "19745050-0dce-4bf0-9435-63152139bff7", 
+    "input": {
+      "l2tp_connection": {
+        "psk": "abcdefgh", 
+        "description": "detail info", 
+        "name": "update_l2tp", 
+        "admin_state_up": true
+      }
+    }
+  }, 
+  "post_network_routers_l2tps_users_01": {
+    "TestCase": "POST NETWORK ROUTERS L2TPS USERS", 
+    "router_id": "bb76ee0f-e42b-401b-9217-07391ca97779", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {
+        "l2tp_connection": {
+          "psk": "abcdefgh", 
+          "users": [
+            {
+              "username": "test", 
+              "password": "Passw0rd", 
+              "ip_address": "*"
+            }, 
+            {
+              "username": "demo", 
+              "password": "Passw0rd", 
+              "ip_address": "*"
+            }
+          ], 
+          "admin_state_up": true, 
+          "tenant_id": "033c54f1743f4b00aaa4b9f66003acc3", 
+          "description": "detail info", 
+          "net_cidr": "173.162.5.0/24", 
+          "id": "19745050-0dce-4bf0-9435-63152139bff7", 
+          "name": "update_l2tp"
+        }
+      }
+    }, 
+    "l2tp_id": "19745050-0dce-4bf0-9435-63152139bff7", 
+    "input": {
+      "user": {
+        "username": "test", 
+        "password": "Passw0rd"
+      }
+    }
+  }, 
+  "post_network_routers_l2tps_01": {
+    "TestCase": "POST NETWORK ROUTERS L2TPS", 
+    "router_id": "bb76ee0f-e42b-401b-9217-07391ca97779", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {
+        "l2tp_connection": {
+          "psk": "shsfgsjs", 
+          "users": [
+            {
+              "username": "demo", 
+              "password": "Passw0rd", 
+              "ip_address": "*"
+            }
+          ], 
+          "admin_state_up": true, 
+          "tenant_id": "033c54f1743f4b00aaa4b9f66003acc3", 
+          "description": "detail info", 
+          "net_cidr": "173.162.5.0/24", 
+          "name": "test_l2tp"
+        }
+      }
+    }, 
+    "input": {
+      "l2tp_connection": {
+        "psk": "shsfgsjs", 
+        "net_cidr": "173.162.5.0/24", 
+        "description": "detail info", 
+        "name": "test_l2tp", 
+        "admin_state_up": true
+      }
+    }
+  }, 
+  "get_network_routers_l2tps_id_01": {
+    "TestCase": "POST NETWORK ROUTERS L2TPS", 
+    "router_id": "bb76ee0f-e42b-401b-9217-07391ca97779", 
+    "l2tp_id": "19745050-0dce-4bf0-9435-63152139bff7", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {
+        "l2tp_connection": {
+          "psk": "shsfgsjs", 
+          "users": [
+            {
+              "username": "demo", 
+              "password": "Passw0rd", 
+              "ip_address": "*"
+            }
+          ], 
+          "admin_state_up": true, 
+          "tenant_id": "033c54f1743f4b00aaa4b9f66003acc3", 
+          "description": "detail info", 
+          "net_cidr": "173.162.5.0/24", 
+          "id": "19745050-0dce-4bf0-9435-63152139bff7", 
+          "name": "test_l2tp"
+        }
+      }
+    }
+  }, 
+  "get_network_routers_l2tps_01": {
+    "TestCase": "GET NETWORK ROUTERS L2TPS", 
+    "router_id": "bb76ee0f-e42b-401b-9217-07391ca97779", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {
+        "l2tp_connections": []
+      }
+    }
+  }, 
+  "delete_network_routers_l2tps_id_01": {
+    "TestCase": "DELETE NETWORK ROUTERS L2TPS ID", 
+    "router_id": "bb76ee0f-e42b-401b-9217-07391ca97779", 
+    "l2tp_id": "19745050-0dce-4bf0-9435-63152139bff7", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {}
+    }
+  }, 
+  "delete_network_routers_l2tps_user_01": {
+    "TestCase": "DELETE NETWORK ROUTERS L2TPS USER", 
+    "router_id": "bb76ee0f-e42b-401b-9217-07391ca97779", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {
+        "l2tp_connection": {
+          "psk": "abcdefgh", 
+          "users": [
+            {
+              "username": "demo", 
+              "password": "Passw0rd", 
+              "ip_address": "*"
+            }
+          ], 
+          "admin_state_up": true, 
+          "tenant_id": "033c54f1743f4b00aaa4b9f66003acc3", 
+          "description": "detail info", 
+          "net_cidr": "173.162.5.0/24", 
+          "id": "19745050-0dce-4bf0-9435-63152139bff7", 
+          "name": "update_l2tp"
+        }
+      }
+    }, 
+    "l2tp_id": "19745050-0dce-4bf0-9435-63152139bff7", 
+    "input": {
+      "user": {
+        "username": "test", 
+        "password": "Passw0rd", 
+        "ip_address": "*"
+      }
+    }
+  }
+}

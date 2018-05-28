@@ -1,0 +1,167 @@
+{
+  "post_network_security_group_rules_01": {
+    "TestCase": "POST NETWORK SECURITY GROUP RULES", 
+    "input": {
+      "security_group_rule": {
+        "direction": "ingress", 
+        "protocol": 6, 
+        "remote_ip_prefix": "192.168.1.0/24", 
+        "port_range_max": 1901, 
+        "enabled": 1, 
+        "security_group_id": "aca73d36-9cd9-4fe0-82af-90425597d4de", 
+        "priority": 1, 
+        "port_range_min": 1900, 
+        "tenant_id": "033c54f1743f4b00aaa4b9f66003acc3", 
+        "action": "accept", 
+        "ethertype": "IPv4"
+      }
+    }, 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {
+        "security_group_rule": {
+          "remote_group_id": null, 
+          "direction": "ingress", 
+          "protocol": "6", 
+          "description": "", 
+          "remote_ip_prefix": "192.168.1.0/24", 
+          "port_range_max": 1901, 
+          "enabled": true, 
+          "security_group_id": "aca73d36-9cd9-4fe0-82af-90425597d4de", 
+          "priority": 1, 
+          "port_range_min": 1900, 
+          "tenant_id": "033c54f1743f4b00aaa4b9f66003acc3", 
+          "action": "accept", 
+          "ethertype": "IPv4"
+        }
+      }
+    }
+  }, 
+  "delete_network_security_group_rule_id_01": {
+    "TestCase": "DELETE NETWORK SECURITY GROUP RULE ID", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {}
+    }, 
+    "security_group_rule_id": "380aea84-9ea4-4f66-a742-9baa0b049250"
+  }, 
+  "get_network_security_group_rule_01": {
+    "TestCase": "GET NETWORK SECURITY GROUP RULE", 
+    "output": {
+      "msg": "", 
+      "code": "int", 
+      "data": {
+        "security_group_rules": [
+          {
+            "remote_group_id": null, 
+            "direction": "", 
+            "protocol": "", 
+            "description": "", 
+            "remote_ip_prefix": null, 
+            "created_at": "", 
+            "enabled": "boolean", 
+            "updated_at": "", 
+            "security_group_id": "", 
+            "priority": "int", 
+            "id": "", 
+            "tenant_id": "", 
+            "action": "", 
+            "ethertype": ""
+          }
+        ]
+      }
+    }
+  }, 
+  "get_network_security_group_rule_id_01": {
+    "TestCase": "GET NETWORK SECURITY GROUP RULE ID", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {
+        "security_group_rule": {
+          "remote_group_id": null, 
+          "direction": "egress", 
+          "protocol": "5", 
+          "description": "", 
+          "remote_ip_prefix": "192.168.2.0/24", 
+          "port_range_max": 1902, 
+          "enabled": true, 
+          "id": "380aea84-9ea4-4f66-a742-9baa0b049250", 
+          "security_group_id": "aca73d36-9cd9-4fe0-82af-90425597d4de", 
+          "priority": 3, 
+          "port_range_min": 1901, 
+          "tenant_id": "033c54f1743f4b00aaa4b9f66003acc3", 
+          "action": "drop", 
+          "ethertype": "IPv4"
+        }
+      }
+    }, 
+    "security_group_rule_id": "380aea84-9ea4-4f66-a742-9baa0b049250"
+  }, 
+  "get_network_security_group_rules_inspect_01": {
+    "TestCase": "GET NETWORK SECURITY GROUP RULES INSPECT", 
+    "input": {
+      "method": "post"
+    }, 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {}
+    }
+  }, 
+  "get_network_security_group_rule_id_inspect_01": {
+    "TestCase": "GET NETWORK SECURITY GROUP RULE ID INSPECT", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {}
+    }, 
+    "security_group_rule_id": "380aea84-9ea4-4f66-a742-9baa0b049250", 
+    "input": {
+      "method": "delete"
+    }
+  }, 
+  "put_network_security_group_rule_id_01": {
+    "TestCase": "PUT NETWORK SECURITY GROUP RULE ID", 
+    "input": {
+      "security_group_rule": {
+        "direction": "egress", 
+        "protocol": "5", 
+        "remote_ip_prefix": "192.168.2.0/24", 
+        "port_range_max": 1902, 
+        "enabled": 1, 
+        "security_group_id": "aca73d36-9cd9-4fe0-82af-90425597d4de", 
+        "priority": 3, 
+        "port_range_min": 1901, 
+        "tenant_id": "033c54f1743f4b00aaa4b9f66003acc3", 
+        "action": "drop", 
+        "ethertype": "IPv4"
+      }
+    }, 
+    "security_group_rule_id": "380aea84-9ea4-4f66-a742-9baa0b049250", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {
+        "security_group_rule": {
+          "remote_group_id": null, 
+          "direction": "egress", 
+          "protocol": "5", 
+          "description": "", 
+          "ethertype": "IPv4", 
+          "remote_ip_prefix": "192.168.2.0/24", 
+          "port_range_max": 1902, 
+          "enabled": true, 
+          "security_group_id": "aca73d36-9cd9-4fe0-82af-90425597d4de", 
+          "priority": 3, 
+          "port_range_min": 1901, 
+          "tenant_id": "033c54f1743f4b00aaa4b9f66003acc3", 
+          "action": "drop", 
+          "id": "380aea84-9ea4-4f66-a742-9baa0b049250"
+        }
+      }
+    }
+  }
+}

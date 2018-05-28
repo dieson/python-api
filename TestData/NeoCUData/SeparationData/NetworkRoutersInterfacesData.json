@@ -1,0 +1,86 @@
+{
+  "delete_network_routers_interfaces_subnet_01": {
+    "TestCase": "DELETE NETWORK ROUTERS INTERFACES SUBNET", 
+    "router_id": "61764f4d-6f41-4720-a40c-249cdf0fc661", 
+    "subnet_id": "11b157a5-7e5d-40ea-8a6a-dfbd51dfcf7a", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {}
+    }
+  }, 
+  "post_network_routers_interfaces_01": {
+    "TestCase": "POST NETWORK ROUTERS INTERFACES", 
+    "router_id": "61764f4d-6f41-4720-a40c-249cdf0fc661", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {
+        "network_id": "889662e6-161d-425d-b593-d43c700f7e90", 
+        "tenant_id": "5352b66d80d64b75ab24e6893cd82f69", 
+        "subnet_ids": [
+          "842adc47-9348-4991-aeec-27b77f3c9ee8"
+        ], 
+        "subnet_id": "11b157a5-7e5d-40ea-8a6a-dfbd51dfcf7a"
+      }
+    }, 
+    "input": {
+      "subnet_id": "11b157a5-7e5d-40ea-8a6a-dfbd51dfcf7a"
+    }
+  }, 
+  "get_network_routers_interfaces_subnet_01": {
+    "TestCase": "GET NETWORK ROUTERS INTERFACES SUBNET", 
+    "router_id": "61764f4d-6f41-4720-a40c-249cdf0fc661", 
+    "subnet_id": "11b157a5-7e5d-40ea-8a6a-dfbd51dfcf7a", 
+    "output": {
+      "msg": "Router interface not found", 
+      "code": 70519, 
+      "data": {}, 
+      "code_context": {
+        "id": "11b157a5-7e5d-40ea-8a6a-dfbd51dfcf7a"
+      }
+    }
+  }, 
+  "get_network_routers_interfaces_01": {
+    "TestCase": "GET NETWORK ROUTERS INTERFACES", 
+    "router_id": "61764f4d-6f41-4720-a40c-249cdf0fc661", 
+    "output": {
+      "msg": "", 
+      "code": 200, 
+      "data": {
+        "subnets": [
+          {
+            "status": "DOWN", 
+            "host_routes": [
+              {
+                "destination": "10.6.6.0/24", 
+                "nexthop": "10.5.5.1"
+              }
+            ], 
+            "description": "", 
+            "enable_dhcp": true, 
+            "network_id": "889662e6-161d-425d-b593-d43c700f7e90", 
+            "tenant_id": "5352b66d80d64b75ab24e6893cd82f69", 
+            "dns_nameservers": [
+              "114.114.114.114"
+            ], 
+            "ipv6_ra_mode": null, 
+            "allocation_pools": [
+              {
+                "start": "172.168.10.2", 
+                "end": "172.168.10.254"
+              }
+            ], 
+            "gateway_ip": "172.168.10.1", 
+            "ip_version": 4, 
+            "ipv6_address_mode": null, 
+            "cidr": "172.168.10.0/24", 
+            "network_name": "create_network_private", 
+            "subnetpool_id": null, 
+            "name": "private_subnet_testing"
+          }
+        ]
+      }
+    }
+  }
+}

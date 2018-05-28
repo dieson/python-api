@@ -1,0 +1,18 @@
+{
+  "Get_NetworkTopology_01": {
+    "TestCase": "Get network topology",
+    "input": {
+    },
+    "output": {
+      "msg": "",
+      "code": "int",
+      "data": {
+        "routers": [],
+        "load_balancers": [],
+        "networks": [],
+        "ports": [],
+        "servers": []
+      }
+    }
+  }
+}

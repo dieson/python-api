@@ -9,43 +9,43 @@ class Connect(object):
         self.base_url = Property.get_conf().get("serverconf", "server_url")
         self.port = Property.get_conf().get("serverconf", "port")
         self.header = {}
-        if token or cookie:
+        if token is not None:
             self.header["X-Auth-Token"] = token
+        if cookie is not None:
             self.header["cookie"] = cookie
 
     # Send GET request.
-    def send_get(self, url, parameter):
+    def send_get(self, url, parameter=None):
         http_url = '%s:%s%s' % (self.base_url, self.port, url)
-        if parameter:
-            self.r = requests.get(http_url, params=parameter, headers=self.header)
-        else:
-            self.r = requests.get(http_url, headers=self.header)
-        print (http_url)
+        self.r = requests.get(http_url, params=parameter, headers=self.header, verify=False)
+        print http_url
 
     # Send POST request.
-    def send_post(self, url, data):
+    def send_post(self, url, data=None):
         http_url = '%s:%s%s' % (self.base_url, self.port, url)
-        print (http_url)
-        self.r = requests.post(http_url, json=data, headers=self.header)
+        print http_url
+        self.r = requests.post(http_url, json=data, headers=self.header, verify=False)
 
     # Send Delete request.
     def send_delete(self, url):
         http_url = '%s:%s%s' % (self.base_url, self.port, url)
         print http_url
-        self.r = requests.delete(http_url, headers=self.header)
+        self.r = requests.delete(http_url, headers=self.header, verify=False)
 
     # Send PATCH request.
     def send_patch(self, url, data):
         http_url = '%s:%s%s' % (self.base_url, self.port, url)
         print http_url
-        self.r = requests.patch(http_url, json=data, headers=self.header)
+        self.r = requests.patch(http_url, json=data, headers=self.header, verify=False)
 
     # Get response data.
     def get_data(self):
-        try:
-            self.r.raise_for_status()
-        except requests.RequestException as e:
-            print(e)
+        if self.r.status_code != 400 and self.r.status_code != 200:
+            try:
+                print self.r
+                self.r.raise_for_status()
+            except requests.RequestException as e:
+                print e
             assert False
         else:
             result = self.r.json()

@@ -88,9 +88,9 @@ class NeoTestRunner(HTMLTestRunner):
 
 if __name__ == '__main__':
     case_dir = os.path.join(Util.get_project_path(), "TestCases", "NeoCUTest", "SeparationAPITest")
-    report_dir = os.path.join(Util.get_project_path(), "Report/")
+    report_dir = os.path.join(Util.get_project_path(), "Report/SeparationAPI_Mail/")
     print report_dir
-    suite = unittest.TestSuite()
+    #suite = unittest.TestSuite()
     discover = unittest.defaultTestLoader.discover(case_dir, pattern="*Test.py", top_level_dir=None)
     now = time.strftime("%Y-%m-%d %H_%M_%S")
     filename = report_dir + now + '_result.html'
