@@ -8,7 +8,7 @@ from Utils.Util import Util
 class JSONDriver(object):
     def __init__(self, file_name):
         self.file_path = os.path.join(Util.get_project_path(), "TestData", file_name)
-        self.data = open(self.file_path, 'r')
+        self.data = open(self.file_path, 'r', encoding='utf-8')
         self.table = json.loads(self.data.read())
         self.data.close()
 
@@ -103,9 +103,14 @@ class JSONDriver(object):
                     data[firstKey].clear()
                     data[firstKey].update(value)
                 elif type(data[firstKey]) is not list and type(data[firstKey]) is not dict:
+                    if value is not None and value != "":
+                        value = value.decode("utf-8")
                     data[firstKey] = value
             else:
-                self._change_value(data[firstKey], value, *keys[1:])
+                if type(data[firstKey]) is list:
+                    self._change_value(data[firstKey][0], value, *keys[1:])
+                else:
+                    self._change_value(data[firstKey], value, *keys[1:])
         else:
             for dataKey in data.keys():
                 if type(data[dataKey]) is dict:

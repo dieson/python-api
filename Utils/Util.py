@@ -117,20 +117,23 @@ class Util(object):
     # sunyu add this method, it can be used to verify data type and its value.
     @staticmethod
     def assert_data_type_value(outputdata, responsedata):
-        print "ExpectData:%s" % outputdata
-        print "ActualData:%s" % responsedata
-
+        print "ExpectData:%s , ActualData:%s" % (outputdata, responsedata)
+        #print type(outputdata), type(responsedata)
         if type(outputdata) is not unicode:
             assert type(outputdata) == type(responsedata)
-
         if type(outputdata) is dict:
             dictkeys = outputdata.keys()
             if len(dictkeys) == 0:
                 assert type(outputdata) == type(responsedata)
             for k in dictkeys:
-                print k
                 if k in responsedata.keys():
-                    Util.assert_data_type_value(outputdata[k], responsedata[k])
+                    # print k
+                    try:
+                        Util.assert_data_type_value(outputdata[k], responsedata[k])
+                    except Exception as e:
+                        print "Got exception"
+                        print "Key: {0}, value: {1} and {2}".format(k, outputdata[k], responsedata[k])
+                        raise (e)
                 else:
                     print "Can't find key: " + k
                     assert False
@@ -144,7 +147,10 @@ class Util(object):
                 assert False
             i = 0
             while i < len(outputdata):
-                Util.assert_data_type_value(outputdata[i], responsedata[i])
+                if type(outputdata[i]) is unicode:
+                    assert (outputdata[i] in responsedata)
+                else:
+                    Util.assert_data_type_value(outputdata[i], responsedata[i])
                 i += 1
         elif type(outputdata) is unicode:
             nstr = outputdata.encode('unicode-escape').decode('string_escape')
@@ -160,5 +166,50 @@ class Util(object):
                     assert (type(responsedata) is int or type(responsedata) is float)
                 responsedata = outputdata
 
+        if type(outputdata) is not list and type(outputdata) is not dict:
+            assert outputdata == responsedata
+
+    @staticmethod
+    def assert_data_type(outputdata, responsedata):
+        print "ExpectData:%s , ActualData:%s" % (outputdata, responsedata)
+        print type(outputdata), type(responsedata)
+        if type(outputdata) is not unicode:
+            assert type(outputdata) == type(responsedata)
+        if type(outputdata) is dict:
+            dictkeys = outputdata.keys()
+            if len(dictkeys) == 0:
+                assert type(outputdata) == type(responsedata)
+            for k in dictkeys:
+                if k in responsedata.keys():
+                    print k
+                    Util.assert_data_type(outputdata[k], responsedata[k])
+                else:
+                    print "Can't find key: " + k
+                    assert False
+        elif type(outputdata) is list:
+            outputdata.sort()
+            responsedata.sort()
+            if len(outputdata) == 0:
+                assert type(outputdata) == type(responsedata)
+            if len(outputdata) > len(responsedata):
+                print("Can not get enough response data")
+                assert False
+            i = 0
+            while i < len(outputdata):
+                Util.assert_data_type(outputdata[i], responsedata[i])
+                i += 1
+        elif type(outputdata) is unicode:
+            nstr = outputdata.encode('unicode-escape').decode('string_escape')
+            # when no need to check the value, let the output data to be response data
+            if len(nstr) == 0 or nstr in ['int', 'float', 'int|float', "boolean"]:
+                if nstr == "int":
+                    assert int == type(responsedata)
+                elif nstr == "float":
+                    assert float == type(responsedata)
+                elif nstr == "boolean":
+                    assert bool == type(responsedata)
+                elif nstr == 'int|float':
+                    assert (type(responsedata) is int or type(responsedata) is float)
+                responsedata = outputdata
         if type(outputdata) is not list and type(outputdata) is not dict:
             assert outputdata == responsedata
